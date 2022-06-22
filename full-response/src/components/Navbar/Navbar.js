@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { Button } from '../Button/Button';
@@ -24,6 +24,10 @@ const Navbar = () => {
       setButton(true);
     }
   }
+
+  useEffect(() => {
+    showButton();
+  },[])
 
   window.addEventListener('resize', showButton)
 
@@ -53,7 +57,7 @@ const Navbar = () => {
           </li>
           <li className='nav-item'>
             <Link to='/signup' className='nav-links' onClick={closeMenu}>
-              Sign up
+              Sign In
             </Link>
           </li>
         </ul>
